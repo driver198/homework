@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<head>
+	<title>Задание 1</title>
+	<script >
+		var number = +prompt('Введите число от 0 до 999');
+		function objNumber(number){
+			var obj = {};
+			if (number<0 || number>999 || isNaN(number)) {
+				console.log('Ошибка.Введите числа от 0 до 999');
+				return obj;
+			}
+			else {
+				obj ['единицы']= number%10;
+				obj ['десятки']= (number - obj['единицы'])%100/10;
+				obj ['сотни']=(number - obj ['единицы'] - obj['десятки']*10)/100;
+				return obj;
+			}
+		}
+		console.log(objNumber(number));
+	</script>
+</head>
